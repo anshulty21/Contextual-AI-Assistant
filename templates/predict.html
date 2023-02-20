@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>AI Question and Answer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        
+        .result {
+            margin: auto;
+            width: 100%;
+            padding: 20px;
+            border: 3px solid rgb(199, 51, 51);
+        }
+        
+        .speechtxt {
+            width: 100px;
+            font-size: 25px;
+            float: left;
+            height: 40px;
+        }
+        
+        .speak {
+            width: 600px;
+            float: left;
+            height: 40px;
+        }
+        
+        .speak input {
+            width: 598px;
+            height: 38px;
+            font-size: 25px;
+        }
+        
+        .speak input:hover {
+            box-shadow: 5px 5px 5px 5px #E7E4E4;
+            border: 0px;
+        }
+        
+        #spl1 {
+            background: url("https://thumbs.dreamstime.com/z/question-mark-symbol-blue-background-asking-questions-question-answer-round-183989875.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        textarea {
+            margin-left: 400px;
+        }
+    </style>
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="/static/css/signin.css" rel="stylesheet">
+</head>
+
+<body id="spl1">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Q & A</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/predict">prediction<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">logout<span class="sr-only"></span></a>
+                </li>
+
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <center>
+        <form class="form-signin" method=POST>
+            <font color="brown" size="3" face="Cooper">
+                <h1 class="h3 mb-3 font-weight-normal">Welcome to AI based Question and Answering system &#x1f917;</h1>
+            </font>
+            <label for="question"><b>Enter your question</b></label><br><br>
+            <input type="text" name="question" id="question" placeholder="Question?" required autofocus> <br><br>
+            <label for="context"> <b>Enter the paragraph/context</b> </label><br><br>
+
+            <div class="speak"><textarea rows="8" cols="80" type="text" name="context" id="speechToText" placeholder="Context" onclick="record()" required></textarea></div>
+
+            <br> <br><br><br><br><br><br><br><br><br>
+            <button class="btn-primary" type="submit">Find Answer</button>
+            <br><br> {% if result %}
+            <p> <span style="color:rebeccapurple; width:300px;">Question:</span> {{question}}</p>
+            <p> <span style="color: rebeccapurple;  width:300px;">Context:</span> {{context}}</p>
+            <br>
+            <h4>Answer:</h4>
+            <p class="h3 mb-3 font-weight-normal" style="font-size:30px; color:red;">{{result}}</p>
+            {% endif %}
+        </form>
+        <script>
+            function record() {
+                var recognition = new webkitSpeechRecognition();
+                recognition.lang = "en-GB";
+                recognition.onresult = function(event) {
+                    document.getElementById("speechToText").value = event.results[0][0].transcript;
+                }
+                recognition.start();
+            }
+        </script>
+    </center>
+</body>
+
+</html>

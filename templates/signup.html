@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Sign up</title>
+    <style>
+        #spl1 {
+            background: url("https://thumbs.dreamstime.com/z/question-mark-symbol-blue-background-asking-questions-question-answer-round-183989875.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body id="spl1">
+    <form action="/signup" method="post">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 jumbotron">
+                    <h4 class="text-center bg-info text-white">User SignUp here</h4>
+
+
+                    <form action="/signup" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">UserName</label>
+                            <input type="text" class="form-control" id="username" name="username">
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email">
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+
+                        <button type="submit" class="btn btn-info btn-sm btn-block">Sign up</button>
+                    </form>
+                    <br> Already a User? <a href="/login">Login</a>
+                    <h2>{{a}}</h2>
+
+                </div>
+                <div class="col-md-4"></div>
+
+
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>
