@@ -23,4 +23,4 @@ Install sql client --> pip install mysqlclient
 
 Install tensorflow --> pip install tensorflow
 
-Install transformer --> pip install transformer
+Install transformer --> pip install transformers
