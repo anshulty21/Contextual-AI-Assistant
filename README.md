@@ -1,5 +1,5 @@
 # final-bert
-<<<<<<< Fork the Repository
+<<<<<<< Fork the Repository >>>>>>>
 
 Clone it to your local machine
 
@@ -15,12 +15,5 @@ Create a Virtual Environment
 
 --> .\env\Scripts\activate.ps1
 
-Install Flask --> pip install flask
+pip install -r requirements.txt
 
-Install SQLAlchemy --> pip install sqlAlchemy
-
-Install sql client --> pip install mysqlclient
-
-Install tensorflow --> pip install tensorflow
-
-Install transformer --> pip install transformers
