@@ -2,61 +2,326 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="../static/assets/fonts/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="../static/assets/fonts/iconsmind/iconsmind.css">
     <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/assets/footer.css">
+    <link rel="stylesheet" href="../static/assets/aos.css">
+    <link rel="stylesheet" href="../static/assets/FontAwesome.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&family=Source+Serif+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/apple-touch-icon.png">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>home</title>
-    <style>
-        #spl1 {
-            background: url("https://thumbs.dreamstime.com/z/question-mark-symbol-blue-background-asking-questions-question-answer-round-183989875.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+    <title>Q & A - AI ASSISTANT ( Contextual AI )</title>
 </head>
 
-<body id="spl1">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Q & A</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/signup">Sign up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact us</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<body class="loaded" data-aos-easing="ease" data-aos-duration="750" data-aos-delay="50">
+    
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container position-relative">
+                <a class="navbar-brand" href="/"><img src="../static/images/logo_q&a.png" class="img-fluid me-3" height="48" width="48"><span>Q & A</span></a>
+                <div class="d-flex align-items-center navbar-no-collapse-items order-lg-last">
+                    <button class="navbar-toggler order-last" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-demo-3" aria-controls="navbar-demo-3" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"><i></i></span></button>
+                    <div class="nav-item me-3 me-lg-0">
+                        <a href="/login" class="btn btn-primary btn-sm me-2">Sign In</a>
+                        <a href="/signup" class="btn btn-primary btn-sm">Sign Up</a>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-demo-3">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown me-lg-3">
+                            <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle-header">Community</a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="https://discord.gg/" target="_blank"><i class="bx bxl-discord"></i> Discord</a>
+                                <a class="dropdown-item" href="https://twitter.com/" target="_blank"><i class="bx bxl-twitter"></i> Twitter</a>
+                            </div>
+                        </li>
+                        <li class="nav-item me-lg-3"><a href="/use-cases" class="nav-link">Use cases</a></li>
+                        <li class="nav-item me-lg-3"><a href="/blog" class="nav-link">Blog</a></li>
+                        <li class="nav-item dropdown me-lg-3">
+                            <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle-header">About</a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="/about">About us</a>
+                                <a class="dropdown-item" href="/team">Team</a>
+                                <a class="dropdown-item" href="/partners">Partners</a>
+                            </div>
+                        </li>
+                           <li class="nav-item me-lg-3"><a href="/contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>   
+    
+    <section class="position-relative overflow-hidden bg-dark text-white" id="main-banner">
+        <div class="container position-relative pt-12 pb-12">
+            <div class="row py-lg-7">
+                <div class="col-xl-10 mx-auto text-center">
+                    <h1 class="display-3 mb-4">Talk To <span class="text-gradient">Your Documents</span> with <span class="text-gradient">AI</span></h1>
+                    <!--<p class="lead mb-5">Help your employees be always in-the-know, enhancing decision-making, and saving their valuable time.</p>-->
+                    <a href="https://www.producthunt.com/products/Q&ABert" target="_blank" rel="nofollow"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=379806&amp;theme=dark&amp;period=daily" alt="Q & A - AI ASSISTANT ( Contextual AI )" style="width: 250px; height: 54px;" width="250" height="54"></a>
+                      <br>
+                        <br>
+                       <a href="https://discord.gg/" target="_blank" rel="nofollow">
+                         <div class="discord-block">
+                          <div class="discord-title">chat</div>
+                          <div class="discord-online">100 online</div>
+                        </div>
+                       </a>
+                      <br>
+                        <br>
+                    <a target="_blank" rel="nofollow" href="/signup" class="btn btn-outline-white btn-lg rounded-pill btn-rise mt-2">
+                        <div class="btn-rise-bg bg-white"></div>
+                        <div class="btn-rise-text">Sign Up for free</div>
+                    </a>
+                </div>
+            </div>
         </div>
-    </nav>
+    </section>
+
+
+    
+    <div class="container position-relative py-4 py-lg-6">
+    <div class="col-12 mt-4 text-center">
+        <h4 class="mb-4 display-6">Features</h4>
+    </div>
+</div>
+
+<section class="position-relative overflow-hidden bg-gradient-primary text-white">
+    <div class="container py-9 py-lg-11 position-relative z-index-1">
+        
+        <div class="row">
+            <div class="col-lg-4 mb-5 mb-lg-0 aos-init aos-animate" data-aos="fade-up">
+				<div class="position-relative">
+					  <div class="position-relative pl-10 pt-4 pt-lg-6">
+						  <h5 class="step-font">Q&A Engineering 📝</h5><br>
+						  <p class="mb-0 opacity-80">Technology has made tremendous strides in recent years, and one of the most exciting applications is the development of contextual assistants for Q&A. These assistants use advanced machine learning algorithms, such as BERT, to understand and respond to natural language queries in a way that feels human-like. With the ability to analyze the context of a question, as well as the user's past interactions with the system, a contextual assistant can provide highly personalized and accurate responses in real-time.</p>
+					  </div>
+				  </div>
+				</div>
+			  	<div class="col-lg-4 mb-5 mb-lg-0 aos-init aos-animate" data-aos="fade-up">
+				<div class="position-relative">
+					  <div class="position-relative pl-10 pt-4 pt-lg-6">
+						  <h5 class="step-font">AI trained on your data 📚</h5><br>
+						  <p class="mb-0 opacity-80">AI models like TensorFlow and BERT can be incredibly powerful tools for responding to Q&A, particularly when they are tailored to your specific content. By training these models on your data, you can create custom virtual assistants that incorporate your FAQ, product details, or documentation. </p>
+					  </div>
+				  </div>
+				</div>
+				<div class="col-lg-4 mb-5 mb-lg-0 aos-init aos-animate" data-aos="fade-up">
+				<div class="position-relative">
+					  <div class="position-relative pl-10 pt-4 pt-lg-6">
+						  <h5 class="step-font">Unified AI Search 🔎</h5><br>
+						  <p class="mb-0 opacity-80">Enable your team an internal search that really works, finds exactly what they need, and lets them get back to their jobs within seconds, armed with the data they need. This leads to Improved productivity, reduced content duplication and rework, informed decision making, and greater employee satisfaction.</p>
+					  </div>
+				  </div>
+				</div>
+        </div>
+    </div>
+</section>
+<div class="d-flex align-items-center pb-3">
+    <br>
+</div>
+
+<section class="logos-section">
+    <h4 class="logos-section__title content-title"> <span class="text-gradient">Multiple AI Models</span> <h6>(COMING SOON!)</h6></h4>
+    <p class="logos-section__text"> you can access multiple Generative AI models, such as GPT-3.5 Turbo, GPT-4, Cohere, Stability AI, and DALL-E, to create exceptional content. Whether you need high-quality images, compelling essays, engaging social media posts, or intriguing stories, it can help you generate unique and original content quickly and efficiently.</p>
+    <ul class="logos-section__list">
+        <li class="logos-section__list-item">
+            <img src="../static/images/02.png" width="136" height="40" alt="" class="logos-section__logo">
+        </li>
+        <li class="logos-section__list-item">
+            <img src="../static/images/05.png" width="106" height="40" alt="" class="logos-section__logo">
+        </li>
+        <li class="logos-section__list-item">
+            <img src="../static/images/03.png" width="114" height="40" alt="" class="logos-section__logo">
+        </li>
+        <li class="logos-section__list-item">
+            <img src="../static/images/04.png" width="98" height="40" alt="" class="logos-section__logo">
+        </li>
+        <li class="logos-section__list-item logos-section__list-item--high">
+            <img src="../static/images/06.png" width="63" height="58" alt="" class="logos-section__logo">
+        </li>
+        <li class="logos-section__list-item">
+            <img src="../static/images/01.png" width="104" height="40" alt="" class="logos-section__logo">
+        </li>
+    </ul>
+</section>
+
+
+<section class="info-section">
+    <div class="info-section__block">
+        <div class="info-section__block-inner">
+            <div class="info-section__image-box">
+                <img class="info-section__image" src="../static/images/dashboard.png" width="643" height="442">
+            </div>
+            <div class="info-section__text-box">
+                <h4 class="info-section__title content-title">Fine-tune <span class="text-gradient">AI</span></h4>
+                <p class="info-section__text">Finetuning is training a model on how to respond. It requires a dataset and careful data preparation. Our Chatbots offers an alternative: prompt engineering. By adding a Prompt Template with explicit instructions to your model, you can get results comparable to a fine-tuned AI model. Experience the power of Our Chatbots for efficient and precise model responses.</p>
+                <ul class="info-section__list">
+				  	<li class="info-section__list-item">Prompt your AI to answer or generate content the way you want.</li>
+					<li class="info-section__list-item">To get even better results - provide it with one or few examples.</li>
+                </ul>
+                <!--a target="_blank" rel="nofollow" href="/signup" class="info-section__btn btn btn-lg rounded-pill">Sign Up for free</a-->
+            </div>
+        </div>
+    </div>
+    <div class="info-section__block">
+        <div class="info-section__block-inner">
+            <div class="info-section__image-box">
+                <img class="info-section__image" src="../static/images/background3.gif" width="643">
+            </div>
+            <div class="info-section__text-box">
+                <h4 class="info-section__title content-title">Customize AI on <span class="text-gradient">Your Data</span></h4>
+                <p class="info-section__text">Tailoring AI/LLM models with your specific content enables you to develop ChatGPT-style web chats that incorporate your FAQ, product details, or documentation. Create custom virtual assistants for employees, educational assistants, or integrate seamlessly into your website, or numerous messaging platforms and APIs.</p>
+                <ul class="info-section__list">
+                    <li class="info-section__list-item">Utilize AI with your unique and current content.</li>
+                    <li class="info-section__list-item">Make AI model's responses accurate and predictable.</li>
+                </ul>
+                <!--a target="_blank" rel="nofollow" href="/signup" class="info-section__btn btn btn-lg rounded-pill">Sign Up for free</a-->
+            </div>
+        </div>
+    </div>
+    <div class="info-section__block">
+        <div class="info-section__block-inner">
+            <div class="info-section__image-box">
+                <img class="info-section__image" src="../static/images/screenshot_aisearch.png" width="643" height="442">
+            </div>
+            <div class="info-section__text-box">
+                <h4 class="info-section__title content-title">AI <span class="text-gradient">Search</span></h4>
+                <p class="info-section__text">Enable your team an internal search that really works, finds exactly what they need, and lets them get back to their jobs within seconds, armed with the data they need. This leads to Improved productivity, reduced content duplication and rework, informed decision making, and greater employee satisfaction.</p>
+                <ul class="info-section__list">
+                    <li class="info-section__list-item">Semantic AI Search</li>
+                    <li class="info-section__list-item">Generative Search</li>
+                    <li class="info-section__list-item">Hybrid Search</li>
+                </ul>
+                <!--a target="_blank" rel="nofollow" href="/signup" class="info-section__btn btn btn-lg rounded-pill">Sign Up for free</a-->
+            </div>
+        </div>
+    </div>
+	<div class="info-section__block">
+        <div class="info-section__block-inner">
+            <div class="info-section__image-box">
+                <img class="info-section__image" src="../static/images/connect_to_anything_img.png" width="643" height="442">
+            </div>
+            <div class="info-section__text-box">
+                <h4 class="info-section__title content-title">Connect to <span class="text-gradient">Anything</span></h4>
+                <p class="info-section__text">Experience effortless connectivity with Our Chatbots, integrating with popular messaging and social apps such as Discord, Slack, WhatsApp, Telegram, and MS Teams. Our versatile API endpoints allow you to have a seamless experience while working with an array of data sources, all from the comfort of your preferred interface. Enhance your digital workspace with Our Chatbots.</p>
+                <!--a target="_blank" rel="nofollow" href="/signup" class="info-section__btn btn btn-lg rounded-pill">Sign Up for free</a-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="subscription-section">
+    <div class="subscription-section__holder">
+        <div class="subscription-section__holder-inner">
+            <svg class="subscription-section__decor" width="197" height="99" viewBox="0 0 197 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M280 141C280 122.615 276.392 104.41 269.381 87.4243C262.371 70.4387 252.095 55.0052 239.141 42.005C226.188 29.0048 210.809 18.6925 193.884 11.6569C176.959 4.6212 158.819 0.999999 140.5 1C122.181 1 104.041 4.62121 87.1157 11.6569C70.1907 18.6925 54.8124 29.0049 41.8586 42.0051C28.9048 55.0053 18.6293 70.4387 11.6188 87.4243C4.60827 104.41 0.999998 122.615 1 141L280 141Z" class="stroke-white" stroke-opacity=".2" stroke-width="1.5"></path>
+                <path d="M384 151C384 132.615 380.392 114.41 373.381 97.4243C366.371 80.4387 356.095 65.0052 343.141 52.005C330.188 39.0048 314.809 28.6925 297.884 21.6569C280.959 14.6212 262.819 11 244.5 11C226.181 11 208.041 14.6212 191.116 21.6569C174.191 28.6925 158.812 39.0049 145.859 52.0051C132.905 65.0053 122.629 80.4387 115.619 97.4243C108.608 114.41 105 132.615 105 151L384 151Z" class="stroke-light" stroke-opacity=".2" stroke-width="1.5"></path>
+            </svg>
+
+            <div class="subscription-section__form-holder">
+                <h3 class="subscription-section__title aos-init aos-animate" data-aos="fade-up">Get stories direct to your inbox</h3>
+                <form id="subscribeForm" data-aos="fade-up" data-aos-delay="100" class="aos-init aos-animate">
+                    <div class="subscription-section__form-row">
+                        <input type="email" name="email-subscription" id="email-subscription" class="subscription-section__input" placeholder="Email Address" required="">
+                        <button type="submit" class="subscription-section__button">
+                            <span>Subscribe</span>
+                        </button>
+                    </div>
+                </form>
+
+                <p class="subscription-section__text aos-init aos-animate" data-aos="fade-up" data-aos-delay="150">
+                    We’ll never share your details.
+                    View our <a href="/policy" class="subscription-section__text-link">Privacy Policy</a> for more info.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="d-flex align-items-center pb-3">
+            <br>
+</div>
+
+
+
+
+<footer>
+    <section class="footer__area p-relative">
+        <div class="footer-top grey2-bg pt-100 pb-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-12">
+                        <div class="footer__widget footer-1 mb-40">
+                            <div class="footer__widget-logo mb-30">
+                                <a href="/" class="logo-bl"><img src="../static/images/logo_q&a.png" height="45" width="45" alt="logo-img">Q&A Contextual AI</a>
+                            </div>
+                            <p>Super-Charge Your documents! Turn your docs, wikis, and spreadsheets(coming soon) into an AI-like context-aware chatbot!</p>
+                            <p><i class="fas fa-map-marker-alt" style="color: #8f989b;"></i> JSS ACADEMY OF TECHNICAL EDUCATION , NOIDA (Sec-62)</p>
+                            <ul class="footer__widget-social">
+                                <li><a href="https://discord.gg/" class="social_item" target="_blank"><i class="fab fa-discord"></i></a></li>
+                                <li><a href="https://twitter.com/" class="social_item" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                        <div class="footer__widget footer-2 mb-40 ml-125">
+                            <h4 class="footer__widget-title mb-25">Docs</h4>
+                            <ul class="footer__widget-links">
+                                <li><a href="/docs/discord">Discord</a></li>
+                                <li><a href="/docs/slack">Slack</a></li>
+                                <li><a href="/docs/telegram">Telegram</a></li>
+                                <li><a href="/docs/whatsapp">WhatsApp</a></li>
+                                <li><a href="/docs/api">API</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="footer__widget footer-3 mb-40">
+                            <h4 class="footer__widget-title mb-25">Policies</h4>
+                            <ul class="footer__widget-links">
+                                <li><a href="/policy">Privacy Policy</a></li>
+                                <li><a href="/terms">Terms &amp; Conditions</a></li>
+                                <li><a href="/cookies">Cookies Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-3 mt-90">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright pt-20 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="copyright-text text-center">
+                            <p>© <script>document.write(new Date().getFullYear())</script>  Q&A CONTEXTUAL AI .</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  
+    
 </body>
 
 </html>

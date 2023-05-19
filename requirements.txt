@@ -1,5 +1,6 @@
-flask
-sqlalchemy
-mysqlclient
-tensorflow
-transformers
+Flask>=2.0.0
+Flask-SQLAlchemy>=3.0.0
+Flask-Login>=0.5.0
+transformers>=4.9.2
+werkzeug>=2.1.0
+torch>=1.9.0

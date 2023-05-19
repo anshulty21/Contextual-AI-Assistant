@@ -2,108 +2,257 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q & A - AI ASSISTANT ( Contextual AI )</title>
     <meta name="description" content="">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>AI Question and Answer</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-        
-        .result {
-            margin: auto;
-            width: 100%;
-            padding: 20px;
-            border: 3px solid rgb(199, 51, 51);
-        }
-        
-        .speechtxt {
-            width: 100px;
-            font-size: 25px;
-            float: left;
-            height: 40px;
-        }
-        
-        .speak {
-            width: 600px;
-            float: left;
-            height: 40px;
-        }
-        
-        .speak input {
-            width: 598px;
-            height: 38px;
-            font-size: 25px;
-        }
-        
-        .speak input:hover {
-            box-shadow: 5px 5px 5px 5px #E7E4E4;
-            border: 0px;
-        }
-        
-        #spl1 {
-            background: url("https://thumbs.dreamstime.com/z/question-mark-symbol-blue-background-asking-questions-question-answer-round-183989875.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        textarea {
-            margin-left: 400px;
-        }
-    </style>
-    </style>
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/dashboard/bootstrap-icons.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&amp;family=Open+Sans:wght@300..800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="../static/dashboard/vendor/css/simplebar.min.css">
+    <link rel="stylesheet" href="../static/dashboard/vendor/css/choices.min.css">
+    <link rel="stylesheet" href="../static/dashboard/vendor/css/daterangepicker.css">
+    <link rel="stylesheet" href="../static/dashboard/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/apple-touch-icon.png">
+    
     <!-- Custom styles for this template -->
-    <link href="/static/css/signin.css" rel="stylesheet">
-</head>
 
-<body id="spl1">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Q & A</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+</head> 
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/predict">prediction<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">logout<span class="sr-only"></span></a>
-                </li>
-
-
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<body>
+    
+    <div class="d-flex flex-column flex-root">
+        <div class="page d-flex flex-row flex-column-fluid">
+            <aside class="page-sidebar">
+                <div class="h-100 flex-column d-flex justify-content-start">
+                    <div class="aside-logo d-flex align-items-center flex-shrink-0 justify-content-start px-5 position-relative">
+                        <a href="/predict" class="d-block">
+                            <div class="d-flex align-items-center flex-no-wrap text-truncate">
+                                <span class="sidebar-icon size-40 d-flex"><img src="../static/images/logo_q&a.png" class="img-fluid" height="40" width="40"></span>
+                                
+                                <span class="sidebar-text">
+                                    <span class="sidebar-text text-truncate fs-3 fw-bold">Q&A AI</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="aside-menu px-3 my-auto" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px -16px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: visible scroll;"><div class="simplebar-content" style="padding: 0px 16px;">
+                        <nav class="flex-grow-1 h-100" id="page-navbar">
+                            <ul class="nav flex-column collapse-group collapse d-flex">
+                                                                    <li class="nav-item mt-2 sidebar-title text-truncate small opacity-50"><i class="bi bi-three-dots"></i><span>Menu</span></li>
+                                <li class="nav-item"><a href="/libraries" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><span class="material-symbols-rounded">database</span></span><span class="sidebar-text">Libraries</span></a></li>
+                                <li class="nav-item"><a href="/webchats" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><span class="material-symbols-rounded">chat</span></span><span class="sidebar-text">WebChat</span></a></li>
+                                <li class="nav-item mt-2 sidebar-title text-truncate small opacity-50"><i class="bi bi-three-dots"></i><span>Integrations</span></li>
+                                <li class="nav-item"><a href="/slackbots" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><i class="d-block bi bi-slack"></i></span><span class="sidebar-text">Slack<span class="badge rounded-pill bg-light text-dark ms-3">coming soon!</span></span></a></li>
+                                <li class="nav-item"><a href="/discords" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><i class="d-block bi bi-discord"></i></span><span class="sidebar-text">Discord<span class="badge rounded-pill bg-light text-dark ms-3">coming soon!</span></span></a></li>
+                                <li class="nav-item"><a href="/whatsapps" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><i class="d-block bi bi-whatsapp"></i></span><span class="sidebar-text">Whatsapp<span class="badge rounded-pill bg-light text-dark ms-3">coming soon!</span></span></a></li>
+                                <li class="nav-item"><a href="/bots" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><i class="d-block bi bi-telegram"></i></span><span class="sidebar-text">Telegram<span class="badge rounded-pill bg-light text-dark ms-3">coming soon!</span></span></a></li>
+                                <li class="nav-item"><a href="javascript:;" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><i class="d-block bi bi-microsoft-teams"></i></span><span class="sidebar-text">MS Teams<span class="badge rounded-pill bg-light text-dark ms-3">coming soon!</span></span></a></li>
+                                <li class="nav-item mt-2 sidebar-title text-truncate small opacity-50"><i class="bi bi-three-dots"></i><span>Other</span></li>
+                                <li class="nav-item"><a href="https://huggingface.co/Aaroosh/bert-finetuned-squad" class="nav-link d-flex align-items-center text-truncate"><span class="sidebar-icon"><span class="material-symbols-rounded">terminal</span></span><span class="sidebar-text">Train Your Model</span></a></li>
+                                
+                            </ul>
+                        </nav>
+                        
+                    </div></div></div></div>
+                    <div class="simplebar-placeholder" style="width: auto; height: 535px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 40px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+                </div>
+            </aside>
+            <div class="sidebar-close d-lg-none">
+                <a href="#"></a>
+            </div>
+            <main class="page-content d-flex flex-column flex-row-fluid">
+                <header class="navbar mb-3 px-3 px-lg-6 px-3 px-lg-6 align-items-center page-header navbar-expand navbar-light">
+                    
+                    <a href="/predict" class="navbar-brand d-block d-lg-none roboosty-logo"><div class="d-flex align-items-center flex-no-wrap text-truncate"><img src="../static/images/logo_q&a.png" class="img-fluid" height="40" width="40"></div></a>
+                    <ul class="navbar-nav d-flex align-items-center h-100">
+                        <li class="nav-item d-none d-lg-flex flex-column h-100 me-2 align-items-center justify-content-center" data-tippy-placement="bottom-start" data-tippy-content="Toggle Sidebar">
+                            <a href="javascript:void(0)" class="sidebar-trigger nav-link size-40 d-flex align-items-center justify-content-center p-0"><span class="material-symbols-rounded">menu_open</span></a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="navbar-nav ms-auto d-flex align-items-center h-100">
+                        <li class="nav-item d-flex align-items-center justify-content-center flex-column h-100 me-2">
+                            <label class="dark-mode-checkbox size-40 d-flex align-items-center justify-content-center nav-link p-0" for="ChangeTheme"><input type="checkbox" id="ChangeTheme"> <span class="slide"></span></label>
+                        </li>
+                        
+                        <li class="nav-item dropdown d-flex align-items-center justify-content-center flex-column h-100">
+                            <a href="#" class="nav-link dropdown-toggle height-40 px-2 d-flex align-items-center justify-content-center" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-status status-online me-sm-2 avatar xs"><img src="../static/images/no-avatar-user-circle-icon.png" class="rounded-circle img-fluid" alt=""></div>
+                                    <span class="d-none d-md-inline-block">{{ current_user.email.split('@')[0] }}</span>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu mt-0 p-0 dropdown-menu-end overflow-hidden">
+                                <div class="position-relative overflow-hidden px-3 pt-4 pb-7 bg-gradient-primary text-white">
+                                    <svg style="transform: rotate(-180deg)" preserveAspectRatio="none" class="position-absolute start-0 bottom-0 w-100 dropdown-wave" fill="currentColor" height="24" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" opacity=".25"></path>
+                                        <path d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z" opacity=".5"></path>
+                                        <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z"></path>
+                                    </svg>
+                                    <div class="position-relative">
+                                        <h5 class="mb-1">{{ email_username }}</h5>
+                                        <p class="text-white text-opacity-75 small mb-0 lh-1">{{ current_user.email }}</p>
+                                    </div>
+                                </div>
+                                <div class="pt-2">
+                                    <a href="{{ url_for('profile') }}" class="dropdown-item d-flex align-items-center">
+                                        <span class="material-symbols-rounded align-middle me-2 size-30 fs-5 d-flex align-items-center justify-content-center bg-primary text-white rounded-2">account_circle</span>
+                                        <span class="flex-grow-1">Profile</span>
+                                    </a>
+                                    
+                                    <hr class="my-2">
+                                    <form action="/logout" method="POST">
+                                        <button type="submit" class="dropdown-item d-flex align-items-center"><span class="material-symbols-rounded align-middle me-2 size-30 fs-5 d-flex align-items-center justify-content-center bg-warning text-white rounded-2">logout</span><span class="flex-grow-1">Logout</span></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown ms-2 d-flex d-lg-none align-items-center justify-content-center flex-column h-100">
+                            <a href="javascript:void(0)" class="nav-link sidebar-trigger-lg-down size-40 p-0 d-flex align-items-center justify-content-center"><span class="material-symbols-rounded align-middle">menu</span></a>
+                        </li>
+                    </ul>
+                </header>
+                
+                <div class="toolbar px-3 px-lg-6 pt-1 pb-1">
+<div class="position-relative container-fluid px-0">
+    <div class="row align-items-center position-relative">
+        <div class="col-sm-12 mb-3 mb-sm-0">
+            <h3 class="mb-2"><span>Hello,</span> {{ current_user.email.split('@')[0] }}! 👋</h3>
+         <a href="/"><p class="mb-0">Upgrade Now!</a> <span class="badge bg-success">FREE</span></p> 
         </div>
-    </nav>
+    </div>
+</div>
+</div>
+<div class="content pt-3 px-3 px-lg-6 d-flex flex-column-fluid">
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div class="col-12 mb-3 mb-lg-5">
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                       <button class="btn btn-purple" disabled>
+  <span class="dot"></span>
+  BETA
+</button>
+ </div>
+   <center>
+   <br>
+   <!-- FORM FOR MODEL PROCESSING -->
+   <form class="form-signin" method="POST" onsubmit="submitForm(event)" >
+    <h5 class="mb-3">Welcome to AI based Question and Answering system &#x1f917;</h5>
 
+    <div class="card-body" style="max-width: 35%;">
+      <label for="question" class="form-label mb-3"><b>Enter your question</b></label>
+      <br>
+      <input type="text" name="question" id="question" class="form-control form-control-sm" placeholder="Type your question here" required autofocus>
+    </div>
+    <div class="card-body" style="width:70%;">
+      <h5 class="card-title">Enter the paragraph/context</h5>
+      <div class="form-floating mb-3">
+        <textarea class="form-control" name="context" id="speechToText" style="height: 200px; resize: none; overflow: auto;" placeholder="Context" required></textarea>
+        <label for="speechToText">Context</label>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-sm me-2" id="find-answer-btn" style="border-radius: 0.25rem; padding: 0.25rem 0.75rem; border: none;">
+      Find Answer
+    </button>
+    <div id="spinner" class="spinner-border spinner-border-sm text-primary" role="status" style="display: none;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <br><br>
+    <div class="card-footer align-items-center d-flex justify-content-between">
+        <span id="answer-label">Answer :  <div id="answer-box"></div> </span>
+       
+      </div>
+
+  </form>
+  
+  <script>
+   function submitForm(event) {
+  event.preventDefault();
+  const form = event.target;
+  const question = form.querySelector('#question').value;
+  const context = form.querySelector('#speechToText').value;
+  const requestData = {question, context};
+  const findAnswerBtn = form.querySelector('#find-answer-btn');
+  const spinner = form.querySelector('#spinner');
+  const answerBox = form.querySelector('#answer-box');
+  const answerArea = document.createElement('div');
+answerArea.classList.add('answer-box');
+  answerBox.innerHTML = ''; // remove existing answer box
+  findAnswerBtn.disabled = true;
+  spinner.style.display = 'inline-block';
+  setTimeout(() => {
+    fetch('/inference', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestData)
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    
+      .then(function(responseData) {
+       const answerText = responseData.answer;
+       const answerSpan = document.createElement('span');
+       answerSpan.innerHTML = answerText;
+       const answerBox = document.querySelector('#answer-box');
+       const answerLabel = document.querySelector('#answer-label');
+       answerBox.innerHTML = ''; // remove existing answer
+       answerBox.appendChild(answerSpan);
+       answerLabel.style.display = 'inline-block'; // show the answer label
+     })
+    .catch(function(error) {
+      console.log('An error occurred:', error);
+    })
+    .finally(function() {
+      findAnswerBtn.disabled = false;
+      spinner.style.display = 'none';
+    });
+  }, 1000);
+}
+  </script>
+
+ </center>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                  
+
+</main>       
+           
+        </div>
+    </div>
+    
+<footer class="pb-3 pb-lg-5 px-3 px-lg-5">
+        <div class="container-fluid px-0">
+            <span class="d-block lh-sm small text-muted text-end">© <script>document.write(new Date().getFullYear())</script> Q&A CONTEXTUAL AI .</span>
+        </div>
+    </footer>
+
+
+                
+
+
+ 
+   
+    <!--
     <center>
         <form class="form-signin" method=POST>
-            <font color="brown" size="3" face="Cooper">
-                <h1 class="h3 mb-3 font-weight-normal">Welcome to AI based Question and Answering system &#x1f917;</h1>
+         
+            <h5 class="mb-0">Welcome to AI based Question and Answering system &#x1f917;</h5>
             </font>
             <label for="question"><b>Enter your question</b></label><br><br>
             <input type="text" name="question" id="question" placeholder="Question?" required autofocus> <br><br>
@@ -111,7 +260,7 @@
 
             <div class="speak"><textarea rows="8" cols="80" type="text" name="context" id="speechToText" placeholder="Context" onclick="record()" required></textarea></div>
 
-            <br> <br><br><br><br><br><br><br><br><br>
+            <br> <br>
             <button class="btn-primary" type="submit">Find Answer</button>
             <br><br> {% if result %}
             <p> <span style="color:rebeccapurple; width:300px;">Question:</span> {{question}}</p>
@@ -132,6 +281,11 @@
             }
         </script>
     </center>
+-->
+    
+
+
+<script src="../static/dashboard/theme.bundle.js"></script>
 </body>
 
 </html>

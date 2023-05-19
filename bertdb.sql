@@ -2,7 +2,8 @@
 SQLyog Community Edition- MySQL GUI v7.15 
 MySQL - 5.5.29 : Database - bert
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -21,15 +22,9 @@ DROP TABLE IF EXISTS `user`;
 
 CREATE TABLE `user` (
   `id` int(100) NOT NULL AUTO_INCREMENT,
-  `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-/*Data for the table `user` */
 
-insert  into `user`(`id`,`username`,`email`,`password`) values (1,'vishwa','vishwa@gmail.com','vishwa');
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
