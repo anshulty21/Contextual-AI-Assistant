@@ -53,7 +53,7 @@ def inference():
         return jsonify({'error': 'Invalid request data'})
     question = data['question']
     context = data['context']
-    inputs = tokenizer(question, context, return_tensors='pt')
+    inputs = tokenizer(question, context, return_tensors='pt , max_length=512)
     outputs = model(**inputs)
     answer_start_scores, answer_end_scores = outputs.start_logits, outputs.end_logits
     answer_start = torch.argmax(answer_start_scores)
