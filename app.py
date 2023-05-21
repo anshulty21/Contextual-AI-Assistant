@@ -14,7 +14,9 @@ app.secret_key = secrets.token_hex(16)
 app.static_folder = 'static'
 app.static_url_path = '/static'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost/bert'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost:3306/bert'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost:3306/user'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 # set up the login manager
@@ -53,7 +55,7 @@ def inference():
         return jsonify({'error': 'Invalid request data'})
     question = data['question']
     context = data['context']
-    inputs = tokenizer(question, context, return_tensors='pt , max_length=512)
+    inputs = tokenizer(question, context, return_tensors='pt' , max_length=512)
     outputs = model(**inputs)
     answer_start_scores, answer_end_scores = outputs.start_logits, outputs.end_logits
     answer_start = torch.argmax(answer_start_scores)
